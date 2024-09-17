@@ -5,7 +5,7 @@ const User = () => {
         <div>
             User
 
-            <input type="text"/>
+            <input className="UserInput" type="text" placeholder="Username"/>
         </div>
     )
 }

@@ -4,7 +4,7 @@ const Password = () => {
     return (
         <div>
             Password
-            <input type="password"/>
+            <input className="PasswordInput" type="password" placeholder="Password"/>
         </div>
     )
 }
