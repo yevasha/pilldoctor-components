@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Password from "./Password";
-import User from "./User"
+import User from "./User";
+import "./Login.modules.css";
+
 
 const Login = () => {
     const [password, setPassword] = useState("");
@@ -10,6 +12,7 @@ const Login = () => {
         <div className="LoginInput">
             <User/>
             <Password password={password} setPassword={setPassword} />
+            <button>Login</button>
         </div>
     )
 }
