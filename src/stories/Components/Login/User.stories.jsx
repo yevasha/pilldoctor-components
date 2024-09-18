@@ -1,7 +1,7 @@
 import User from "./User"
 
 export default {
-    title: "FRK/Components/User",
+    title: "FRK/Components/Login/User",
     component: User,
 }
 
