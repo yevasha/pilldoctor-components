@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, Button, ListGroup } from 'react-bootstrap';
 
 const ProfilePage = () => {
   const healthInfo = {
