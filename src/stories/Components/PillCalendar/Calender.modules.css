@@ -1,0 +1,9 @@
+.Outer-box {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
