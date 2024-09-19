@@ -1,9 +1,40 @@
-.Outer-box {
-    width: 200px;
-    height: 200px;
-    border: 2px solid black;
+.calendar {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 20px;
     background-color: white;
+    border-radius: 10px;
+  }
+  
+  .calendar-header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .calendar-day {
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .calendar-day:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .highlight {
+    background-color: #4caf50;
+    color: white;
+  }
