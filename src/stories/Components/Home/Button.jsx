@@ -1,19 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Button = ({ label, onClick, variant = 'primary' }) => {
-  const baseStyles = 'px-4 py-2 rounded font-bold';
-  const variantStyles = {
-    primary: 'bg-blue-500 text-white hover:bg-blue-600',
-    secondary: 'bg-gray-300 text-gray-800 hover:bg-gray-400',
-  };
+const Button = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (
-    <button 
-      className={`${baseStyles} ${variantStyles[variant]}`}
-      onClick={onClick}
-    >
-      {label}
-    </button>
+    <div style={{ position: 'fixed', top: '10px', right: '10px' }}>
+      <button 
+        onClick={toggleDropdown}
+        style={{ 
+          backgroundColor: 'black', 
+          color: 'white', 
+          padding: '10px 20px',
+          border: 'none',
+          cursor: 'pointer'
+        }}
+      >
+        Menu
+      </button>
+
+      {isOpen && (
+        <div style={{
+          position: 'absolute',
+          right: '0',
+          marginTop: '5px',
+          backgroundColor: 'black',
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%'
+        }}>
+          <button style={{ 
+            backgroundColor: 'black', 
+            color: 'white', 
+            padding: '10px 20px',
+            border: 'none',
+            cursor: 'pointer',
+            textAlign: 'left'
+          }}>
+            Login
+          </button>
+          <button style={{ 
+            backgroundColor: 'black', 
+            color: 'white', 
+            padding: '10px 20px',
+            border: 'none',
+            cursor: 'pointer',
+            textAlign: 'left'
+          }}>
+            Register
+          </button>
+        </div>
+      )}
+    </div>
   );
 };
 
