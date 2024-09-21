@@ -6,4 +6,6 @@ export default {
   component: Button,
 };
 
-export const MenuDropdown = () => <Button />;
+export const Default = () => <Button />;
+
+export const MenuWithLogin = () => <Button />;
