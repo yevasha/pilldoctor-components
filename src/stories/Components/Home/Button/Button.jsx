@@ -1,53 +1,83 @@
 import React, { useState } from 'react';
-import './Button.css';
+import Login from '../Login/Login';
 
 const Button = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeComponent, setActiveComponent] = useState(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleOptionClick = (option) => {
-    console.log(`Clicked: ${option}`);
+    setActiveComponent(option);
     setIsOpen(false);
   };
 
-  const menuItems = [
-    'Home',
-    'Log in',
-    'Register',
-    'Profile',
-    'Calendar',
-    'Health Tracker',
-    'Pill Reminder'
-  ];
+  const renderActiveComponent = () => {
+    switch (activeComponent) {
+      case 'Login':
+        return <Login />;
+      case 'Register':
+        return <div style={{ marginTop: '20px' }}>Register Component</div>;
+      default:
+        return null;
+    }
+  };
 
   return (
-    <div className="button-container">
+    <div style={{ position: 'fixed', top: '10px', right: '10px' }}>
       <button 
         onClick={toggleDropdown}
-        className="menu-button"
-        aria-label="Toggle menu"
+        style={{ 
+          backgroundColor: 'black', 
+          color: 'white', 
+          padding: '10px 20px',
+          border: 'none',
+          cursor: 'pointer'
+        }}
       >
-        <div className="hamburger-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        Menu
       </button>
 
       {isOpen && (
-        <div className="dropdown">
-          {menuItems.map((item, index) => (
-            <div 
-              key={index}
-              onClick={() => handleOptionClick(item)}
-              className="dropdown-item"
-            >
-              {item}
-            </div>
-          ))}
+        <div style={{
+          position: 'absolute',
+          right: '0',
+          marginTop: '5px',
+          backgroundColor: 'black',
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%'
+        }}>
+          <button 
+            onClick={() => handleOptionClick('Login')}
+            style={{ 
+              backgroundColor: 'black', 
+              color: 'white', 
+              padding: '10px 20px',
+              border: 'none',
+              cursor: 'pointer',
+              textAlign: 'left'
+            }}
+          >
+            Login
+          </button>
+          <button 
+            onClick={() => handleOptionClick('Register')}
+            style={{ 
+              backgroundColor: 'black', 
+              color: 'white', 
+              padding: '10px 20px',
+              border: 'none',
+              cursor: 'pointer',
+              textAlign: 'left'
+            }}
+          >
+            Register
+          </button>
         </div>
       )}
+
+      {renderActiveComponent()}
     </div>
   );
 };
