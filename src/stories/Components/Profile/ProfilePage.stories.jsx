@@ -1,11 +1,12 @@
-import Profile from "./ProfilePage"
+import React from 'react';
+import ProfilePage from './ProfilePage';
 
-Profile
 export default {
-    title: 'FRK/Components/Profile',
-    component: Profile
-}
+  title: 'FRK/Components/Profile/ProfilePage',
+  component: ProfilePage,
+};
 
-export const Default = {
-    
-}
+const Template = (args) => <ProfilePage {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {};
