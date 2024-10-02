@@ -11,7 +11,7 @@ const Button = () => {
     'Log In',
     'Register',
     'Profile',
-    'Calendar',
+    'Pill Tracker',
     'Health Tracker',
     'Reminder'
   ];
