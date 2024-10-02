@@ -2,7 +2,7 @@ import React from "react";
 import HomePage from ".MedicineTracker/HomePage";
 
 export default {
-    title: "FRK/Components/HomePage",
+    title: "FRK/Components/MedicineTracker/HomePage",
     component: HomePage,
 };
 
