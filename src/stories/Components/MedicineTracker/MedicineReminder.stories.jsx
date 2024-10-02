@@ -1,10 +1,9 @@
 import React from "react";
-import MedicineReminder from "./MedicineReminder";
+import MedicineReminder from ".MedicineTracker/MedicineReminder"; // Adjust the path if necessary
 
 export default {
-    title: "FRK/Components/PillCalender/MedicineReminder",
+    title: "FRK/Components/MedicineReminder",
     component: MedicineReminder,
 };
 
-// Default story
 export const Default = () => <MedicineReminder />;

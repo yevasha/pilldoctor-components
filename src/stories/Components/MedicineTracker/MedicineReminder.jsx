@@ -1,5 +1,5 @@
 import React from "react";
-import "./MedicineReminder.modules.css"; 
+import ".MedicineTracker/MedicineReminder.modules.css"; 
 
 const MedicineReminder = () => {
     const reminders = [
