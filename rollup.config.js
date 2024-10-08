@@ -52,5 +52,9 @@ export default {
       presets: ['@babel/preset-env', '@babel/preset-react']
     }),
   ],
-  external: Object.keys(pkg.peerDependencies || {})
+  external: [
+    'react',
+    'react-dom',
+    Object.keys(pkg.peerDependencies || {})
+  ]
 };
